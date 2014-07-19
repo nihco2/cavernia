@@ -16,8 +16,7 @@ define({
     'jquery': '../linker/jquery/jquery',
     'handlebars': '../linker/handlebars/handlebars',
     'ember': '../linker/ember/ember',
-    'ember-data': '../linker/ember-data/ember-data',
-
+    'ember-data': '../linker/ember-data/ember-data'
   },
   /*hbs plugin options*/
   hbs: {
