@@ -20,6 +20,8 @@
   "author": "",
   "license": "",
   "devDependencies": {
-    "grunt-contrib-handlebars": "^0.8.0"
+    "grunt-bower-task": "0.3.4",
+    "grunt-contrib-handlebars": "^0.8.0",
+    "grunt-requirejs-config": "0.0.2"
   }
 }

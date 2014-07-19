@@ -1,0 +1,24 @@
+{
+  "name": "cavernia",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nihco2/cavernia",
+  "authors": [
+    "Nicolas Martin <nihco2@gmail.com>"
+  ],
+  "dependencies": {
+    "ember": "~1.6.1",
+    "ember-data": "~1.0.0-beta.8"
+  },
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "~2.1.14"
+  }
+}

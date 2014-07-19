@@ -24,6 +24,8 @@ logs
 results
 
 node_modules
+bower_components
+assets/linker
 
 npm-debug.log
 
