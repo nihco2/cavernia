@@ -68,11 +68,3 @@
   window.io
 
 );
-
-// socket is globalized by sails
-socket.get('/cavern', {
-  message: 'hi there!'
-}, function(response) {
-  // response === {success: true, message: 'hi there!'}
-  console.log('HEY!', response);
-});

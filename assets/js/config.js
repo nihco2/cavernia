@@ -4,6 +4,10 @@ define({
     'ember': {
       deps: ['handlebars', 'jquery'],
       exports: 'Ember'
+    },
+    'ember-data': {
+      deps: ['ember'],
+      exports: 'DS'
     }
   },
   paths: {
@@ -11,6 +15,7 @@ define({
     'models': 'app/models',
     'views': 'app/views',
     'controllers': 'app/controllers',
+    'routes': 'app/routes',
     'templates': 'app/templates',
     /*libs*/
     'jquery': '../linker/jquery/jquery',

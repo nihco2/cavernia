@@ -1,4 +1,4 @@
-define(['ember'], function(Ember) {
+define(['ember', 'ember-data'], function(Ember) {
   var attr = DS.attr,
     cavern = DS.Model.extend({
       nom: DS.attr('string'),

@@ -1,14 +1,17 @@
 define([
-	"views/ApplicationView",
-	"controllers/ApplicationController",
-	"app/router"
-], function(ApplicationView, ApplicationController, Router){
-	/*Module Pattern*/
-	var App = {
-		ApplicationView: ApplicationView,
-		ApplicationController: ApplicationController,
-		Router: Router
-	};
+  "views/ApplicationView",
+  "controllers/ApplicationController",
+  "routes/ApplicationRoute",
+  "app/router",
+  "models/cavern"
+], function(ApplicationView, ApplicationController, ApplicationRoute, Router) {
+  /*Module Pattern*/
+  var App = {
+    ApplicationView: ApplicationView,
+    ApplicationController: ApplicationController,
+    ApplicationRoute: ApplicationRoute,
+    Router: Router
+  };
 
-	return App;
+  return App;
 });
