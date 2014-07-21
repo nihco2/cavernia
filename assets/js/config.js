@@ -11,17 +11,17 @@ define({
     }
   },
   paths: {
+    /*libs*/
+    'jquery': '../linker/jquery/jquery',
+    'handlebars': '../linker/handlebars/handlebars',
+    'ember': '../linker/ember/ember',
+    'ember-data': '../linker/ember-data/ember-data',
     'App': 'app/application',
     'models': 'app/models',
     'views': 'app/views',
     'controllers': 'app/controllers',
     'routes': 'app/routes',
     'templates': 'app/templates',
-    /*libs*/
-    'jquery': '../linker/jquery/jquery',
-    'handlebars': '../linker/handlebars/handlebars',
-    'ember': '../linker/ember/ember',
-    'ember-data': '../linker/ember-data/ember-data'
   },
   /*hbs plugin options*/
   hbs: {

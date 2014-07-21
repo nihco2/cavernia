@@ -4,13 +4,14 @@ define([
   "routes/ApplicationRoute",
   "app/router",
   "models/cavern"
-], function(ApplicationView, ApplicationController, ApplicationRoute, Router) {
+], function(ApplicationView, ApplicationController, ApplicationRoute, Router, ApplicationStore) {
   /*Module Pattern*/
   var App = {
     ApplicationView: ApplicationView,
     ApplicationController: ApplicationController,
     ApplicationRoute: ApplicationRoute,
-    Router: Router
+    Router: Router,
+    ApplicationStore: DS.Store.extend()
   };
 
   return App;
