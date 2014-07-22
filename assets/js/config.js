@@ -16,12 +16,13 @@ define({
     'handlebars': '../linker/handlebars/handlebars',
     'ember': '../linker/ember/ember',
     'ember-data': '../linker/ember-data/ember-data',
+    'async': '../linker/requirejs-plugins/async',
     'App': 'app/application',
     'models': 'app/models',
     'views': 'app/views',
     'controllers': 'app/controllers',
     'routes': 'app/routes',
-    'templates': 'app/templates',
+    'templates': 'app/templates'
   },
   /*hbs plugin options*/
   hbs: {

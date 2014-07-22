@@ -1,6 +1,6 @@
 define(['ember', 'ember-data'], function(Ember, DS) {
   var attr = DS.attr,
-    cavern = DS.Model.extend({
+    Cavern = DS.Model.extend({
       nom: DS.attr('string'),
       departement: DS.attr('string'),
       commune: DS.attr('string'),
@@ -12,5 +12,5 @@ define(['ember', 'ember-data'], function(Ember, DS) {
       denivele: DS.attr('string'),
       inventeur: DS.attr('string')
     });
-  return cavern;
+  return Cavern;
 });
