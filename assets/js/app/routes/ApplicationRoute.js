@@ -9,8 +9,8 @@ define([
         console.log('HEY!', response.cavern);
         response.cavern.forEach(function(item) {
           self.store.createRecord('cavern', item);
+          controller.set('caverns',item);
         });
-
       });
     }
   });
