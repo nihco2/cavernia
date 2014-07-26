@@ -22,6 +22,7 @@ define({
     'views': 'app/views',
     'controllers': 'app/controllers',
     'routes': 'app/routes',
+    'mixins': 'app/mixins',
     'templates': 'app/templates'
   },
   /*hbs plugin options*/

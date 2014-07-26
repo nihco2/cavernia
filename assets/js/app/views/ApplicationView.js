@@ -1,21 +1,53 @@
 define([
-  "ember"
-], function(Ember) {
+  "ember", "mixins/Converter"
+], function(Ember, Converter) {
 
-  var ApplicationView = Ember.View.extend({
+  var ApplicationView = Ember.View.extend(Converter, {
     templateName: 'main-template',
+    map: null,
     classNames: ['app-view'],
     didInsertElement: function() {
       if (navigator.geolocation) {
-        var centerpos = new google.maps.LatLng(50, 10);
-        var optionsGmaps = {
-          center: centerpos,
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          zoom: 5
-        };
-        var map = new google.maps.Map(document.getElementById("map"), optionsGmaps);
+        var self = this;
+        self.showMyPosition();
       } else {
         console.log('no geoloc');
+      }
+    },
+
+    showMyPosition: function() {
+      var self = this;
+      return navigator.geolocation.getCurrentPosition(function(position) {
+        var myLatitude = position.coords.latitude,
+          myLongitude = position.coords.longitude,
+          myPosition = new google.maps.LatLng(myLatitude, myLongitude),
+          optionsGmaps = {
+            center: myPosition,
+            mapTypeId: google.maps.MapTypeId.SATELLITE,
+            zoom: 12
+          };
+        self.map = new google.maps.Map(document.getElementById("map"), optionsGmaps);
+        // ROADMAP peut être remplacé par SATELLITE, HYBRID ou TERRAIN
+        // Zoom : 0 = terre entière, 19 = au niveau de la rue
+        self.showMarker(myPosition, "Vous êtes ici");
+      });
+    },
+    showMarker: function(position, title) {
+      var self = this;
+      var marker = new google.maps.Marker({
+        position: position,
+        map: self.map,
+        title: title
+      });
+    },
+    actions: {
+      findCave: function() {
+        var self = this;
+        self.convert(561289, 6413404).then(function(coords) {
+          var position = new google.maps.LatLng(coords.latitude, coords.longitude);
+          self.showMarker(position, "grotte");
+          self.map.panTo(position);
+        });
       }
     }
   });
