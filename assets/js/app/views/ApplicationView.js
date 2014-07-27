@@ -1,10 +1,11 @@
 define([
-  "ember", "mixins/Converter"
-], function(Ember, Converter) {
+  "ember", "mixins/Converter", "text!templates/application.hbs"
+], function(Ember, Converter, applicationTemplate) {
 
   var ApplicationView = Ember.View.extend(Converter, {
-    templateName: 'main-template',
+    //templateName: 'main-template',
     map: null,
+    defaultTemplate: Ember.Handlebars.compile(applicationTemplate),
     classNames: ['app-view'],
     didInsertElement: function() {
       if (navigator.geolocation) {
@@ -17,14 +18,14 @@ define([
 
     showMyPosition: function() {
       var self = this;
-      return navigator.geolocation.getCurrentPosition(function(position) {
+      navigator.geolocation.getCurrentPosition(function(position) {
         var myLatitude = position.coords.latitude,
           myLongitude = position.coords.longitude,
           myPosition = new google.maps.LatLng(myLatitude, myLongitude),
           optionsGmaps = {
             center: myPosition,
             mapTypeId: google.maps.MapTypeId.SATELLITE,
-            zoom: 12
+            zoom: 15
           };
         self.map = new google.maps.Map(document.getElementById("map"), optionsGmaps);
         // ROADMAP peut être remplacé par SATELLITE, HYBRID ou TERRAIN

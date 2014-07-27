@@ -6,6 +6,8 @@ define(["ember"], function(Ember) {
       })
     })
   });
-
+  Router.map(function() {
+    this.resource('search');
+  });
   return Router;
 });

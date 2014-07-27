@@ -1,7 +1,7 @@
 cavernia
 ========
 
-A simple app for find a cave near you.
+Is there a cave near you ?
 
 npm install<br>
 bower install<br>

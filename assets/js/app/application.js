@@ -13,7 +13,8 @@ define([
     ApplicationRoute: ApplicationRoute,
     Converter: Converter,
     Router: Router,
-    Cavern: Cavern
+    Cavern: Cavern,
+    rootElement: '#ember-app'
   };
   return App;
 });

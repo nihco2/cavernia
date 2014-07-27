@@ -158,6 +158,12 @@ module.exports = function(grunt) {
           cwd: './assets',
           src: ['**/*.!(coffee)'],
           dest: '.tmp/public'
+        }, {
+          expand: true,
+          flatten: true,
+          cwd: './assets/linker/bootstrap',
+          src: ['**.eot', '**.svg', '**.ttf', '**.woff'],
+          dest: './assets/linker/fonts'
         }]
       },
       build: {
