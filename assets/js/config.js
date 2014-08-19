@@ -14,6 +14,7 @@ define({
     /*libs*/
     'jquery': '../linker/jquery/jquery',
     'bootsrap': '../linker/bootstrap/bootstrap',
+    'bootsrap-slider': '../linker/bootstrap/bootstrap-slider',
     'handlebars': '../linker/handlebars/handlebars',
     'ember': '../linker/ember/ember',
     'ember-data': '../linker/ember-data/ember-data',

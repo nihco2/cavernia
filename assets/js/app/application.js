@@ -9,8 +9,10 @@ define([
   "routes/IndexRoute",
   "routes/SearchRoute",
   "mixins/converter",
+  "mixins/position",
   "app/router",
-  "models/cavern"
+  "models/cavern",
+  "models/departement"
 ], function(
   ApplicationView,
   IndexView,
@@ -22,8 +24,10 @@ define([
   IndexRoute,
   SearchRoute,
   Converter,
+  Position,
   Router,
-  Cavern
+  Cavern,
+  Departement
 ) {
   /*Module Pattern*/
   var App = {
@@ -37,8 +41,10 @@ define([
     IndexRoute: IndexRoute,
     SearchRoute: SearchRoute,
     Converter: Converter,
+    Position: Position,
     Router: Router,
     Cavern: Cavern,
+    Departement: Departement,
     rootElement: '#ember-app'
   };
   return App;

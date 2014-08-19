@@ -26,7 +26,7 @@ module.exports = {
   index: function(req, res) {
 
     // Send a JSON response
-    Cavern.find().done(function(err, response) {
+    Cavern.find(0).done(function(err, response) {
       if (err) {
         throw (new Error('Error when try to get cavern'));
       }
