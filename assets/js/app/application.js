@@ -9,7 +9,6 @@ define([
   "routes/IndexRoute",
   "routes/SearchRoute",
   "mixins/converter",
-  "mixins/position",
   "app/router",
   "models/cavern",
   "models/departement"
@@ -24,7 +23,6 @@ define([
   IndexRoute,
   SearchRoute,
   Converter,
-  Position,
   Router,
   Cavern,
   Departement
@@ -41,7 +39,6 @@ define([
     IndexRoute: IndexRoute,
     SearchRoute: SearchRoute,
     Converter: Converter,
-    Position: Position,
     Router: Router,
     Cavern: Cavern,
     Departement: Departement,

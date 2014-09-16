@@ -19,6 +19,27 @@ define([
         reject(err);
       });
     },
+    convertToLambert: function(lat, long) {
+      //this function converts GPS-System coordinates (latitude, longitude) into x,y coordinates using the french Lambert-93 system. Returns x,y in an array.
+      return new Ember.RSVP.Promise(function(resolve, reject) {
+        var e = 0.0818191910435,
+          n = 0.725607765053268,
+          c = 11754255.426095668,
+          ys = 700000,
+          xs = 12655612.04987618,
+          isomLat = Math.log(Math.tan(Math.PI / 4 + lat / 2) * Math.pow((1 - e * Math.sin(lat)) / (1 + e * Math.sin(lat)), e / 2)),
+          x = xs + c * Math.exp(-n * isomLat) * Math.sin(n * (long - 3)),
+          y = ys - c * Math.exp(-n * isomLat) * Math.cos(n * (long - 3)),
+          coords = {
+            latitude: x,
+            longitude: y
+          };
+        resolve(coords);
+      }, function(err) {
+        reject(err);
+      });
+    },
+
     computeLatitude: function(isomlat, excent, epsilone) {
       var phi = 2 * Math.atan(Math.exp(isomlat) - Math.PI / 2);
 

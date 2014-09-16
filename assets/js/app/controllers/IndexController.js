@@ -1,4 +1,4 @@
-define(["ember", "mixins/Converter", "mixins/Position"], function(Ember, Converter, Position) {
+define(["ember", "mixins/Converter"], function(Ember, Converter) {
   var IndexController = Ember.Controller.extend(Converter, {
     needs: ['application'],
     actions: {
